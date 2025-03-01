@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box" id="login">
+            <h2>Login</h2>
+            <input type="email" id="email" placeholder="University Email">
+            <input type="password" id="password" placeholder="Password">
+            <button onclick="login()">Login</button>
+        </div>
+        <div class="dashboard" id="dashboard" style="display: none;">
+            <h2>Welcome</h2>
+            <p id="current-class"></p>
+            <p id="attendance-window"></p>
+            <button id="attendance-button" onclick="markAttendance()" disabled>Mark Attendance</button>
+        </div>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-box, .dashboard {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (email && password) {
+                document.getElementById('login').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+                updateClassInfo();
+            } else {
+                alert('Please enter valid credentials');
+            }
+        }
+
+        function updateClassInfo() {
+            const currentTime = new Date();
+            const schedule = [
+                { subject: "Mathematics", start: "14:20", end: "13:20" },
+                { subject: "Physics", start: "11:00", end: "12:00" }
+            ];
+            
+            let activeClass = null;
+            schedule.forEach(cls => {
+                let startTime = new Date();
+                let [startHour, startMin] = cls.start.split(":");
+                startTime.setHours(startHour, startMin, 0);
+                
+                let endTime = new Date(startTime);
+                endTime.setMinutes(endTime.getMinutes() + 5);
+                
+                if (currentTime >= startTime && currentTime <= endTime) {
+                    activeClass = cls;
+                }
+            });
+            
+            if (activeClass) {
+                document.getElementById("current-class").textContent = `Current Class: ${activeClass.subject} (${activeClass.start} - ${activeClass.end})`;
+                document.getElementById("attendance-window").textContent = `Attendance window is open from ${activeClass.start} to ${activeClass.start} + 5 minutes.`;
+                document.getElementById("attendance-button").disabled = false;
+            } else {
+                document.getElementById("current-class").textContent = "No ongoing class or attendance window closed.";
+                document.getElementById("attendance-window").textContent = "";
+                document.getElementById("attendance-button").disabled = true;
+            }
+        }
+
+        function markAttendance() {
+            alert('Attendance marked successfully!');
+        }
+    </script>
+</body>
+</html>

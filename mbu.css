@@ -1,0 +1,84 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial,sans-serif;
+  text-align: center;
+}
+.container{
+  margin-top: 80px;
+}
+.welcome-text{
+  font-family: tahoma;
+  font-style: italic;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.login-form{
+  width: 400px;
+  height: 500px;
+  border: 1px solid #ddd;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.header{
+  background-color: orangered;
+  height: 100px;
+  text-align: center;
+  padding:  15px auto;
+}
+.logo{
+  width: 120px;
+  padding: 15px auto;
+  margin: 15px auto;
+  height: 65px;
+}
+.login-detials{
+  margin-top: 40px;
+}
+.internet{
+  font-style: italic;
+  font-size: 18px;
+  color: blue;
+}
+.input-box{
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+.input-box:hover{
+  border: 1px solid blue;
+}
+.input-button{
+  width: 85%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #44AC33;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.input-button:hover{
+  background-color: #45a049;
+}
+.password-change{
+  font-style: italic;
+  margin-top: 80px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+.last{
+  font-style: italic;
+  font-weight: 700;
+  font-size: 14px;
+
+}

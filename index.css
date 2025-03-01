@@ -1,0 +1,106 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+}
+.container{
+  width: 400px;
+  border: 1px solid #ccc;
+  margin: 30px auto;
+  overflow: hidden;
+  box-shadow: 0 1px 1px #ccc;
+}
+.header{
+  font-style: oblique;
+  font-weight: bold;
+  cursor: pointer;
+}
+.info{
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.login-btn{
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid gray;
+  font-size: 16px;
+  background-color: rgb(63, 191, 241);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.login-btn:hover{
+  background-color: rgb(119, 212, 249);
+}
+.or-container{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 10px 0;
+}
+.line{
+  background-color: #ccc;
+  flex: 1;
+  height: 2px;
+  margin:0 20px;
+}
+.or-text{
+  font-size: 15px;
+  color: gray;
+}
+ /* .facebook{
+  margin: 15px 0;
+}  */
+.facebook-logo{
+  width: 4%;
+  display: inline-block;
+  cursor: pointer;
+}
+.facebook-text{
+  display: inline-block;
+  color: rgb(5, 5, 166);
+  text-align: center;
+  font-size: 18px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+.password{
+  cursor: pointer;
+}
+.sign-up{
+  width: 400px;
+  margin: auto;
+  border: 1px solid #ccc;
+}
+.txt1{
+  padding: 10px;
+  font-size: 16px;
+}
+.txt2{
+  color: rgb(3, 183, 254);
+  cursor: pointer;
+  margin-left: 5px;
+}
+.get-app{
+  margin-top: 20px;
+}
+.last-txt{
+  font-size: 18px;
+}
+.img1{
+  width: 100px;
+  margin: 10px;
+  cursor: pointer;
+}
+/* .img2{
+  width: 20%;
+  display: inline-block;
+} */
